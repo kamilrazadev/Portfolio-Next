@@ -22,6 +22,9 @@ const config = {
       },
     },
     extend: {
+      fontFamily: {
+        anton: ['Anton', 'sans-serif'],
+      },
       colors: {
         "my-primary": "#0F172A",
         "my-purple": "#984EE1",

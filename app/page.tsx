@@ -1,5 +1,6 @@
 import PurpleShine from "@/components/PurpleShine";
 import SpotlightShine from "@/components/SpotlightShine";
+import Image from "next/image";
 import { FaArrowRight } from "react-icons/fa";
 import { GoArrowRight } from "react-icons/go";
 
@@ -8,6 +9,7 @@ export default function Home() {
     <main>
       <section className="w-full min-h-screen flex justify-center items-center bg-my-primary relative">
         <SpotlightShine />
+
         <div className="absolute -bottom-[50%] left-[36%] z-10">
           <span className="opacity-40">
             <PurpleShine />
