@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
-import { Anton, Poppins } from "next/font/google";
+import { Anton, Orbitron, Poppins } from "next/font/google";
 import "./globals.css";
 import WelcomeScreen from "@/components/WelcomeScreen";
+import { useEffect } from "react";
 
 const poppins = Poppins({
   subsets: ["latin"],
@@ -10,6 +11,10 @@ const poppins = Poppins({
 const anton = Anton({
   subsets: ["latin"],
   weight: ["400"],
+});
+const orbitron = Orbitron({
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700", "800", "900"],
 });
 export const metadata: Metadata = {
   title: "Crafting Your Digital Identity | Kamil Raza",
@@ -25,7 +30,9 @@ export default function RootLayout({
     <html lang="en">
       <body className={poppins.className}>
         {/* <WelcomeScreen /> */}
-        {children}
+        <div className="w-full min-h-screen flex justify-center items-start bg-my-primary">
+          <div className="max-w-[1440px]">{children}</div>{" "}
+        </div>
       </body>
     </html>
   );

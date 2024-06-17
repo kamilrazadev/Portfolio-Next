@@ -1,13 +1,22 @@
+"use client";
 import PurpleShine from "@/components/PurpleShine";
 import SpotlightShine from "@/components/SpotlightShine";
-import Image from "next/image";
-import { FaArrowRight } from "react-icons/fa";
 import { GoArrowRight } from "react-icons/go";
+import { motion } from "framer-motion";
 
 export default function Home() {
   return (
-    <main>
-      <section className="w-full min-h-screen flex justify-center items-center bg-my-primary relative">
+    <>
+      <HeroBanner />
+      <DigitalSolutions />
+    </>
+  );
+}
+
+const HeroBanner = () => {
+  return (
+    <>
+      <section className="w-full h-screen max-h-[800px] flex justify-center items-center bg-my-primary relative">
         <SpotlightShine />
 
         <div className="absolute -bottom-[50%] left-[36%] z-10">
@@ -20,19 +29,25 @@ export default function Home() {
         <div className="w-fit flex flex-col items-center gap-5 max-w-[1200px]">
           <div className="p-[0.5px] shadow-[0_0_65px_1px] shadow-my-purple rounded-full bg-gradient-to-r from-my-purple via-white to-my-purple">
             <button
-              className="group px-3 py-1 bg-gradient-to-r from-my-blue-purple to-my-blue-purple-light text-white font-medium relative z-20 flex items-center gap-1 rounded-full
-            "
+              className="group px-3 py-1 bg-gradient-to-r from-my-blue-purple to-my-blue-purple-light text-white font-medium relative z-20 flex items-center gap-1 rounded-full hover:brightness-125 transition-all duration-500
+          "
             >
               Begin your journey: reach out today{" "}
               <GoArrowRight className="group-hover:translate-x-1 transition-all" />
             </button>
           </div>
 
-          <h1 className="text-white text-8xl font-bold text-center">
+          <motion.h1
+            initial={{ opacity: 0, zoom: 1.1 }}
+            animate={{ opacity: 1, zoom: 1 }}
+            transition={{ duration: 0.7 }}
+            data-aos="zoom-in"
+            className="text-white text-[100px] leading-[110px] font-semibold text-center relative z-30"
+          >
             Crafting Your Digital Identity
-          </h1>
+          </motion.h1>
 
-          <p className="text-xl text-slate-400">
+          <p className="text-xl text-slate-200 font-orbitron tracking-widest relative z-30">
             Not just a developer - Here's your complete solution partner
           </p>
 
@@ -42,6 +57,38 @@ export default function Home() {
           </button>
         </div>
       </section>
-    </main>
+    </>
   );
-}
+};
+
+const DigitalSolutions = () => {
+  return (
+    <section className="w-full h-screen max-h-[800px] flex justify-center items-center gap-10 bg-my-primary relative">
+      <div>
+        <p className="text-slate-200 text-center relative z-30 font-orbitron tracking-widest">
+          Comprehensive Digital Solutions
+        </p>
+        <motion.h2
+          initial={{ opacity: 0, zoom: 1.1 }}
+          animate={{ opacity: 1, zoom: 1 }}
+          transition={{ duration: 0.7 }}
+          data-aos="zoom-in"
+          className="text-white text-[100px] leading-[110px] font-semibold text-center relative z-30"
+        >
+          From Website to SEO{" "}
+        </motion.h2>
+        <div className="w-full flex justify-center">
+          <div className="max-w-[700px] ">
+            <p className="text-slate-400 text-center">
+              With our extensive experience and technological expertise, we can
+              create solutions tailored precisely to your needs.
+            </p>
+          </div>
+        </div>
+      </div>
+      <div>
+        <WebServicesCard/>
+      </div>
+    </section>
+  );
+};

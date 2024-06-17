@@ -23,7 +23,8 @@ const config = {
     },
     extend: {
       fontFamily: {
-        anton: ['Anton', 'sans-serif'],
+        anton: ["Anton", "sans-serif"],
+        orbitron: ["Orbitron", "sans-serif"],
       },
       colors: {
         "my-primary": "#0F172A",
