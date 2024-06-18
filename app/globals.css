@@ -126,3 +126,18 @@
 .reflected-text {
   -webkit-box-reflect: below -19px linear-gradient(transparent, #ffffff75);
 }
+
+/* swiper active slide */
+.web-services {
+  position: relative;
+}
+
+.web-services::before {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  z-index: 1000;
+  width: 100px;
+  height: 100px;
+  background-color: #984ee1 !important;
+}

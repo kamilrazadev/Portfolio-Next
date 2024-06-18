@@ -3,6 +3,15 @@ import PurpleShine from "@/components/PurpleShine";
 import SpotlightShine from "@/components/SpotlightShine";
 import { GoArrowRight } from "react-icons/go";
 import { motion } from "framer-motion";
+import WebServicesCard from "@/components/WebServicesCard";
+// Import Swiper React components
+import { Swiper, SwiperSlide } from "swiper/react";
+
+// Import Swiper styles
+import "swiper/css";
+
+// import required modules
+import { Autoplay } from "swiper/modules";
 
 export default function Home() {
   return (
@@ -63,8 +72,8 @@ const HeroBanner = () => {
 
 const DigitalSolutions = () => {
   return (
-    <section className="w-full h-screen max-h-[800px] flex justify-center items-center gap-10 bg-my-primary relative">
-      <div>
+    <section className="w-full h-screen max-h-[800px] flex flex-col justify-center items-center gap-16 bg-my-primary relative">
+      <div className="">
         <p className="text-slate-200 text-center relative z-30 font-orbitron tracking-widest">
           Comprehensive Digital Solutions
         </p>
@@ -86,8 +95,30 @@ const DigitalSolutions = () => {
           </div>
         </div>
       </div>
-      <div>
-        <WebServicesCard/>
+      <div className="w-full">
+        <Swiper
+          spaceBetween={50}
+          centeredSlides={true}
+          // autoplay={{
+          //   delay: 2500,
+          // }}
+          modules={[Autoplay]}
+          // loop={true}
+          slidesPerView={3}
+          className="!p-10"
+        >
+          <SwiperSlide className="web-services h-full w-full">
+            <WebServicesCard />
+          </SwiperSlide>
+
+          <SwiperSlide className="web-services h-full w-full">
+            <WebServicesCard />
+          </SwiperSlide>
+
+          <SwiperSlide className="web-services h-full w-full">
+            <WebServicesCard />
+          </SwiperSlide>
+        </Swiper>
       </div>
     </section>
   );

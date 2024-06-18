@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Anton, Orbitron, Poppins } from "next/font/google";
+import { Anton, Inter, Orbitron, Poppins } from "next/font/google";
 import "./globals.css";
 import WelcomeScreen from "@/components/WelcomeScreen";
 import { useEffect } from "react";
@@ -7,6 +7,10 @@ import { useEffect } from "react";
 const poppins = Poppins({
   subsets: ["latin"],
   weight: ["400", "500", "600", "700", "800", "900"],
+});
+const inter = Inter({
+  subsets: ["latin"],
+  weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
 });
 const anton = Anton({
   subsets: ["latin"],
@@ -28,9 +32,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={poppins.className}>
+      <body className={inter.className}>
         {/* <WelcomeScreen /> */}
-        <div className="w-full min-h-screen flex justify-center items-start bg-my-primary">
+        <div className="w-full overflow-x-hidden min-h-screen flex justify-center items-start bg-my-primary">
           <div className="max-w-[1440px]">{children}</div>{" "}
         </div>
       </body>
