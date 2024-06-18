@@ -81,6 +81,23 @@
   }
 }
 
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0f172a; /* Color of the track */
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #341358d3; /* Color of the handle */
+  border-radius: 6px; /* Roundness of the handle */
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #5f229cd3; /* Color of the handle on hover */
+}
+
 .animate-pulse-custom {
   animation: pulse 5s;
 }

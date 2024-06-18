@@ -51,9 +51,9 @@ const HeroBanner = () => {
             animate={{ opacity: 1, zoom: 1 }}
             transition={{ duration: 0.7 }}
             data-aos="zoom-in"
-            className="text-white text-[100px] leading-[110px] font-semibold text-center relative z-30"
+            className="text-white text-[90px] leading-[90px] font-bold tracking-tighter text-center relative z-30"
           >
-            Crafting Your Digital Identity
+            Crafting Your Digital <br /> Identity
           </motion.h1>
 
           <p className="text-xl text-slate-200 font-orbitron tracking-widest relative z-30">
@@ -73,7 +73,7 @@ const HeroBanner = () => {
 const DigitalSolutions = () => {
   return (
     <section className="w-full h-screen max-h-[800px] flex flex-col justify-center items-center gap-16 bg-my-primary relative">
-      <div className="">
+      <div className="flex flex-col  items-center justify-center gap-2">
         <p className="text-slate-200 text-center relative z-30 font-orbitron tracking-widest">
           Comprehensive Digital Solutions
         </p>
@@ -82,7 +82,7 @@ const DigitalSolutions = () => {
           animate={{ opacity: 1, zoom: 1 }}
           transition={{ duration: 0.7 }}
           data-aos="zoom-in"
-          className="text-white text-[100px] leading-[110px] font-semibold text-center relative z-30"
+          className="text-white text-[70px] leading-[80px] font-bold text-center relative z-30"
         >
           From Website to SEO{" "}
         </motion.h2>
