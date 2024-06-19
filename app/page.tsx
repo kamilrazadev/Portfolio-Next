@@ -12,6 +12,7 @@ import "swiper/css";
 
 // import required modules
 import { Autoplay } from "swiper/modules";
+import { webServicesCardData } from "@/constants";
 
 export default function Home() {
   return (
@@ -75,7 +76,7 @@ const DigitalSolutions = () => {
     <section className="w-full h-screen max-h-[800px] flex flex-col justify-center items-center gap-16 bg-my-primary relative">
       <div className="flex flex-col  items-center justify-center gap-2">
         <p className="text-slate-200 text-center relative z-30 font-orbitron tracking-widest">
-          Comprehensive Digital Solutions
+          Empowering Your Digital Journey{" "}
         </p>
         <motion.h2
           initial={{ opacity: 0, zoom: 1.1 }}
@@ -84,18 +85,19 @@ const DigitalSolutions = () => {
           data-aos="zoom-in"
           className="text-white text-[70px] leading-[80px] font-bold text-center relative z-30"
         >
-          From Website to SEO{" "}
+          Standout Features{" "}
         </motion.h2>
         <div className="w-full flex justify-center">
           <div className="max-w-[700px] ">
             <p className="text-slate-400 text-center">
-              With our extensive experience and technological expertise, we can
-              create solutions tailored precisely to your needs.
+              Discover the innovative design and cutting-edge technology that
+              sets us apart. We focus on creating seamless experiences that
+              elevate your online presence.
             </p>
           </div>
         </div>
       </div>
-      <div className="w-full">
+      <div className="w-full flex">
         <Swiper
           spaceBetween={50}
           centeredSlides={true}
@@ -107,17 +109,11 @@ const DigitalSolutions = () => {
           slidesPerView={3}
           className="!p-10"
         >
-          <SwiperSlide className="web-services h-full w-full">
-            <WebServicesCard />
-          </SwiperSlide>
-
-          <SwiperSlide className="web-services h-full w-full">
-            <WebServicesCard />
-          </SwiperSlide>
-
-          <SwiperSlide className="web-services h-full w-full">
-            <WebServicesCard />
-          </SwiperSlide>
+          {webServicesCardData.map((service, key) => (
+            <SwiperSlide className="web-services relative h-full" key={key}>
+              <WebServicesCard title={service.title} desc={service.desc} />
+            </SwiperSlide>
+          ))}
         </Swiper>
       </div>
     </section>
